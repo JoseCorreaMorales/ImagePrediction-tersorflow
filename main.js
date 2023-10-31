@@ -1,25 +1,17 @@
 let net;
-
-const imgEl = document.getElementsByClassName("image");
+const imgEl = document.getElementsByClassName("image")[0]; // Selecciona el primer elemento de la colección
 let descEl = document.getElementById("desc");
-console.log("image: ", imgEl);
-console.log("image on load ", imgEl.onload);
 
-imgEl.onload = async function () {
-    /*  net = await mobilenet.load();
- 
-     var result = await net.classify(imgEl);
-     console.log(result);
- 
-     descEl.innerHTML = result[0].className; */
-    displayImagePrediction();
+async function app() {
+    net = await mobilenet.load();
+    var result = await net.classify(imgEl);
+    console.log(result);
+    descEl.innerHTML = result[0].className;
 }
-
-
 
 async function displayImagePrediction() {
     try {
-        result = await net.classify(imgEl);
+        var result = await net.classify(imgEl);
         console.log(result);
         descEl.innerHTML = JSON.stringify(result);
     } catch (error) {
@@ -30,29 +22,10 @@ async function displayImagePrediction() {
 let count = 0;
 async function cambiarImagen() {
     count++;
-    //imgEl.src = `https://placekitten.com/${count}/${count}`;
-    imgEl.src = `https://picsum.photos/200/300?random=${count}`
-
-    displayImagePrediction();
-}
-
-//https://picsum.photos/200/300?random=0 
-
-async function app() {
-    net = await mobilenet.load();
-
-    var result = await net.classify(imgEl);
-    console.log(result);
-    //displayImagePrediction();
-    
+    imgEl.src = `https://picsum.photos/200/300?random=${count}`;
     imgEl.onload = async () => {
-        net = await mobilenet.load();
-    
-        var result = await net.classify(imgEl);
-        console.log(result);
-    
-        descEl.innerHTML = result[0].className;
+        displayImagePrediction();
     }
 }
 
-app();
+window.onload = app; // Llamar a app() después de cargar la página

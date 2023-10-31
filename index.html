@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/tensorflow_logo_icon_168671.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
-    <script src="main.js"></script>
-    <title>Document</title>
+
+    <title>Predicción de Imagenes con tensorflow</title>
 </head>
 <body>
     <!-- <img src="https://placekitten.com/200/300" crossorigin="" id="img" class="image" alt="" width="200" height="200"><br><br> -->
-    <img src="https://picsum.photos/200/300" crossorigin="" id="img" class="image" alt="" width="200" height="200"><br><br>
+    <img src="./assets/pexels-rene-strgar.jpg" crossorigin="" id="img" class="image" alt="" width="200" height="200"><br><br>
 
-    <button onclick="cambiarImagen()">Cambiar imagen</button>
+    <button onclick="cambiarImagen();">Cambiar imagen</button>
     <div id="desc"></div>
 </body>
+<script src="main.js"></script>
 </html>
