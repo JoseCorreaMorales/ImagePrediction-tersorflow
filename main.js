@@ -5,31 +5,36 @@ let descList = document.getElementById("desc");
 
 const descContainer = document.createElement("div");
 async function app() {
-    net = await mobilenet.load();
-    var result = await net.classify(imgEl);
-    console.log(result);
-    //descEl.innerHTML = result[0].className;
+    try {
+        net = await mobilenet.load();
+    } catch (error) {
+        console.error("Error al cargar el modelo MobileNet:", error);
+        alert("El modelo no ha sido cargado aun.");
+    }
 }
 
 
 async function displayImagePrediction() {
-    try {
-        var result = await net.classify(imgEl);
-        //descEl.innerHTML = JSON.stringify(result);
-        //name1.innerHTML = result[0].className;    
-        let data = JSON.parse(JSON.stringify(result));  
-        console.log(data);
+    if (net) {
+        try {
+            var result = await net.classify(imgEl);
+            let data = JSON.parse(JSON.stringify(result));
+            console.log(data);
 
-        descContainer.innerHTML = `
-        <div class="prediction">
-            <p class="name"> <span>Nombre</span>: ${data[0].className}</p>
-            <p class="probability"><span>Probabilidad</span>: ${data[1].probability}</p>
-        </div>
-        `;
+            descContainer.innerHTML = `
+            <div class="prediction">
+                <p class="name"> <span>Nombre</span>: ${data[0].className}</p>
+                <p class="probability"><span>Probabilidad</span>: ${data[1].probability}</p>
+            </div>
+            `;
 
-        descList.appendChild(descContainer);
-    } catch (error) {
-        console.error(error);
+            descList.appendChild(descContainer);
+        } catch (error) {
+            console.error("Error al realizar la clasificación:", error);
+        }
+    } else {
+        console.error("El modelo MobileNet no ha sido cargado aún.");
+        alert("El modelo no ha sido cargado aun.");
     }
 }
 
