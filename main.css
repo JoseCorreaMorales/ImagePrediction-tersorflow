@@ -38,11 +38,12 @@
 }
 body {
         width: 100%;
-        height: 100vh !important;
+        /* height: 100vh !important; */
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        background-image: url("./assets/magicpattern-wave.png");        
+        background-image: url("./assets/magicpattern-wave.png");   
+       overflow-x: hidden;   
 }
 
 .container {
@@ -88,6 +89,10 @@ body {
     cursor: pointer;
 }
 
+.desc-container {
+    width: 50%;
+}
+
 .image-description {
     font-size: 2.5rem;
 }
@@ -96,5 +101,36 @@ body {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
+    gap: 1.8rem;
+}
+
+.prediction {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
+
+.prediction span {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.name, .probability {
+    font-size: 1.7rem;
+}
+
+@media (max-width: 700px) {
+    .title {
+        font-size: 3.5rem;
+    }
+}
+
+
+@media (max-width: 440px) {
+    .image-container > img {
+        width: 30rem;
+        height: 30rem;
+    }
+}
+
