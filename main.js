@@ -28,4 +28,8 @@ async function cambiarImagen() {
     }
 }
 
+/* 
+[{"className":"seashore, coast, seacoast, sea-coast","probability":0.2575416564941406},{"className":"lakeside, lakeshore","probability":0.07770660519599915},{"className":"monitor","probability":0.05762989819049835}]
+*/
+
 window.onload = app; // Llamar a app() después de cargar la página

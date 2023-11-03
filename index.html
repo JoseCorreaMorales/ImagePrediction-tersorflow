@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/tensorflow_logo_icon_168671.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
-
+    <link rel="stylesheet" href="main.css">
     <title>Predicción de Imagenes con tensorflow</title>
 </head>
+
 <body>
     <!-- <img src="https://placekitten.com/200/300" crossorigin="" id="img" class="image" alt="" width="200" height="200"><br><br> -->
-    <img src="./assets/pexels-rene-strgar.jpg" crossorigin="" id="img" class="image" alt="" width="200" height="200"><br><br>
+    <h1 class="title">Predicción de Imagenes con tensorflow</h1>
+    <div class="container">
+        <div class="image-container">
+            <img src="./assets/pexels-rene-strgar.jpg" crossorigin="" id="img" class="image" alt="">
+        </div>
 
-    <button onclick="cambiarImagen();">Cambiar imagen</button>
-    <div id="desc"></div>
+        <div class="desc-container">
+            <button onclick="cambiarImagen();" class="change-img">Cambiar imagen</button>
+        <div id="desc" class="image-description"></div>
+            <div class="prediction-1">
+                <p class="name"></p>
+                <p class="probability"></p>
+            </div>
+
+        </div>
+    </div>
 </body>
 <script src="main.js"></script>
+
 </html>

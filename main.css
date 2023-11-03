@@ -1,0 +1,100 @@
+/* @import url('https://fonts.cdnfonts.com/css/kingstone'); */
+@import url('https://fonts.cdnfonts.com/css/aslam');
+@import url('https://fonts.cdnfonts.com/css/morrison');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Kingstone', sans-serif; */
+    font-family: 'Aslam', sans-serif;
+    font-family: 'Morrison', sans-serif;
+    font-size: 62.5%;
+                                                
+}
+
+::-webkit-scrollbar{
+    background: transparent;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(128, 128, 128, 0.71);
+    border-radius: 20px;
+}
+
+::selection {
+    background-color: #F9B572;
+    color: #FAF8ED;
+}
+
+
+.title {
+    font-size: 4.5rem;
+    font-weight: 200;
+    text-align: center;
+    margin: 2rem 0;
+    color: #000000;
+
+}
+body {
+        width: 100%;
+        height: 100vh !important;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("./assets/magicpattern-wave.png");        
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+   /*  width: 250px; */
+
+
+}
+
+.image-container > img {
+    border: .5rem solid #F9B572;
+    border-radius: 50%;
+    padding: 1rem;
+    width: 40rem;
+    height: 40rem;
+}
+
+.change-img {
+    outline: none;
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 3.5rem;
+    border: none;
+    font-family: 'Aslam', sans-serif;
+    font-weight: 500;
+}
+
+.change-img:hover {
+    background-color: #F9B572;
+    color: #FAF8ED;
+    cursor: pointer;
+}
+
+.image-description {
+    font-size: 2.5rem;
+}
+
+.desc-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
