@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="assets/tensorflow_logo_icon_168671.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
     <link rel="stylesheet" href="main.css">
     <title>Predicción de Imagenes con tensorflow</title>
 </head>
@@ -21,13 +22,22 @@
 
         <div class="desc-container">
             <button onclick="cambiarImagen();" class="change-img">Cambiar imagen</button>
-        <div id="desc" class="image-description"></div>
-           
-        <!-- name and prec gonna render here -->
+            <div id="desc" class="image-description"></div>
+
+            <!-- name and prec gonna render here -->
         </div>
+
+        <video class="webcam" muted playsinline id="webcam" width="250" height="250"></video>
+        <div class="btn-clase-container">
+            <button id="clase-a" class="btn-clase" onclick="addExample(1)">Jose</button>
+            <button id="clase-b" class="btn-clase" onclick="addExample(2)">Ok</button>
+            <button id="clase-c" class="btn-clase" onclick="addExample(3)">Rock</button>
+            <button id="clase-d" class="btn-clase" onclick="addExample(4)">Iphone</button>
+        </div>
+        <div id="console"></div>
+        <div id="console2"></div>
     </div>
 </body>
 <script src="main.js"></script>
 
 </html>
-
