@@ -1,5 +1,5 @@
 let net;
-const imgEl = document.getElementsByClassName("image")[0]; // Selecciona el primer elemento de la colección
+const imgEl = document.getElementsByClassName("image")[0]; 
 let descList = document.getElementById("desc");
 const webCamElement = document.getElementById('webcam');
 const classifier = knnClassifier.create();
@@ -22,22 +22,25 @@ async function app() {
         console.error("Error al cargar el modelo MobileNet:", error);
         alert("El modelo no ha sido cargado aun.");
     }
-
     webcam = await tf.data.webcam(webCamElement);
+    await addExample(1);/* jose */
+    await addExample(2);/* Ok */
+    await addExample(3);/* Rock */
+    await addExample(4);/* Iphone */
 
     while (true) {
         const img = await webcam.capture();
         const result = await net.classify(img);
-
         const activation = net.infer(img, "conv_preds");
         let result2;
-
         try {
-            result2 = await classifier.predicClass(activation);
+            result2 = await classifier.predictClass(activation);
             const clases = ["Untrainded", "Jose", "Ok", "Rock", "Iphone"];
-            document.getElementById("console2" + clases[result2.label]);
+            /* document.getElementById("console2").innerText = clases[result2.label]; */
+            document.getElementById("console2").innerHTML = `<p class="console-prediction"><span>Es: </span> ${clases[result2.label]}</p>`;
+
         } catch (error) {
-            console.log(error, "modelo no configura aún...");
+            console.log(error, "modelo no configura aún...", error);
         }
 
         document.getElementById("console").innerHTML = 'Prediccion ' + result[0].className + "Probabilidad " + result[0].probability
@@ -46,7 +49,6 @@ async function app() {
         await tf.nextFrame();
     }
 }
-
 
 async function displayImagePrediction() {
     if (net) {

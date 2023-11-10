@@ -37,12 +37,13 @@
 
 }
 body {
-        width: 100%;
+        /* width: 100%; */
         /* height: 100vh !important; */
+        height: 100% !important;
         background-size: cover;
         background-position: center center;
-        background-repeat: no-repeat;
-        background-image: url("./assets/magicpattern-wave.png");   
+        background-repeat: repeat-y;
+        background-image: url("./assets/magicpattern-wave.png");    
        overflow-x: hidden;   
 }
 
@@ -81,6 +82,8 @@ body {
     border: none;
     font-family: 'Aslam', sans-serif;
     font-weight: 500;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .change-img:hover {
@@ -120,8 +123,15 @@ body {
     font-size: 1.7rem;
 }
 
+video {
+    border-radius: 50%;
+    margin-top: 3rem;
+    outline: .5rem solid #F9B572;
+    padding: 1rem;
+}
 
 .btn-clase-container {
+    margin: 2rem 0;
     display: flex;
     gap: 1rem;
 }
@@ -138,6 +148,32 @@ body {
     color: #FAF8ED;
     cursor: pointer;
 }
+
+.btn-clase:hover {
+    background-color: #FAF8ED;
+    color: #F9B572;
+}
+
+.console-container {
+    padding: 2.5rem;
+
+}
+
+.console {
+    font-size: 1.7rem;
+    margin: 3rem 0 2rem 0;
+}
+
+.console-prediction {
+    font-size: 2.2rem;
+    text-align: center;
+}
+.console-prediction > span {
+    font-weight: 800;
+    font-size: 2.2rem;
+}
+
+
 
 @media (max-width: 700px) {
     .title {
