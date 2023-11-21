@@ -27,6 +27,25 @@
     color: #FAF8ED;
 }
 
+.toast-message {
+    font-size: 2.5rem;
+}
+
+.toast-success {
+    background-color: #F9B572;
+    color: #FAF8ED;
+}
+
+.toast-title {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.toast-error {
+    background-color: #FAF8ED;
+    color: #F9B572;
+}
+
 
 .title {
     font-size: 4.5rem;

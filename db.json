@@ -1,0 +1,80 @@
+{
+  "classifier": {
+    "1": {
+      "kept": true,
+      "isDisposedInternal": false,
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "float32",
+      "size": 1024,
+      "strides": [
+        1024
+      ],
+      "dataId": {
+        "id": 326
+      },
+      "id": 195,
+      "rankType": "2",
+      "scopeId": 272
+    },
+    "2": {
+      "kept": true,
+      "isDisposedInternal": false,
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "float32",
+      "size": 1024,
+      "strides": [
+        1024
+      ],
+      "dataId": {
+        "id": 412
+      },
+      "id": 273,
+      "rankType": "2",
+      "scopeId": 423
+    },
+    "3": {
+      "kept": true,
+      "isDisposedInternal": false,
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "float32",
+      "size": 1024,
+      "strides": [
+        1024
+      ],
+      "dataId": {
+        "id": 498
+      },
+      "id": 351,
+      "rankType": "2",
+      "scopeId": 574
+    },
+    "4": {
+      "kept": true,
+      "isDisposedInternal": false,
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "float32",
+      "size": 1024,
+      "strides": [
+        1024
+      ],
+      "dataId": {
+        "id": 584
+      },
+      "id": 429,
+      "rankType": "2",
+      "scopeId": 725
+    }
+  }
+}

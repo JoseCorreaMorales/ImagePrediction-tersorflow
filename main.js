@@ -1,26 +1,80 @@
 let net;
-const imgEl = document.getElementsByClassName("image")[0]; 
+const imgEl = document.getElementsByClassName("image")[0];
 let descList = document.getElementById("desc");
 const webCamElement = document.getElementById('webcam');
 const classifier = knnClassifier.create();
-
 const descContainer = document.createElement("div");
 
+toastr.options = {
+    "closeButton": true,
+    "debug": true,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "3000",
+    "hideDuration": "1000",
+    "timeOut": "10000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
 
-async function addExample(classId){
+toastr.success('¡Bienvenido! espera, el modelo aún esta cargado...', "", {
+    "positionClass": "toast-top-left",
+    "closeButton": true,
+    "progressBar": true,
+    "timeOut": "10000"
+});
+
+
+async function addExample(classId) {
     const img = await webcam.capture();
     const activation = net.infer(img, true);
 
-    classifier.addExample(activation,classId);
+    classifier.addExample(activation, classId);
     img.dispose();
+    // await saveClassifier();
 }
+
+async function saveClassifier() {
+    const classifierData = classifier.getClassifierDataset();
+
+    await fetch("http://localhost:3000/classifier", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(classifierData),
+    });
+};
+
+const loadClassifier = async () => {
+    const res = await fetch("localhost:3000/classifier");
+    if (res.ok) {
+        const classifierData = await res.json();
+        classifier.setClassifierDataset(classifierData);
+    } else {
+        console.error("Error al cargar el clasificador");
+    }
+
+};
 
 async function app() {
     try {
         net = await mobilenet.load();
+        if (net) {
+            toastr.success('El modelo ha sido cargado correctamente.', {
+                "positionClass": "toast-bottom-right",
+                "closeButton": true,
+                "progressBar": true,
+            });
+        }
     } catch (error) {
         console.error("Error al cargar el modelo MobileNet:", error);
-        alert("El modelo no ha sido cargado aun.");
     }
     webcam = await tf.data.webcam(webCamElement);
     await addExample(1);/* jose */
@@ -84,3 +138,14 @@ async function cambiarImagen() {
 }
 
 window.onload = app; // Llamar a app() después de cargar la página
+//loadClassifier().then(app);
+//window.onload = loadClassifier.then(app); // Llamar a app() después de cargar la página
+
+/* let dataset = classifier.getClassifierDataset();
+let datasetObj = {};
+Object.keys(dataset).forEach((key) => {
+    let data = dataset[key].dataSync();
+    datasetObj[key] = Array.from(data);
+});
+let jsonStr = JSON.stringify(datasetObj);
+localStorage.setItem("myData", jsonStr); */
