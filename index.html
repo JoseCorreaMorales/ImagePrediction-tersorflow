@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+        <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css">
     <link rel="stylesheet" href="main.css">
     <title>Predicción de Imagenes con tensorflow</title>
 </head>
@@ -32,11 +34,17 @@
             <button id="clase-c" class="btn-clase" onclick="addExample(3)">Rock</button>
             <button id="clase-d" class="btn-clase" onclick="addExample(4)">Iphone</button>
         </div>
-       <div class="console-container">
-        <div id="console" class="console"></div>
-        <div id="console2" class="console"></div>
-       </div>
+        <div class="console-container">
+            <div id="console" class="console"></div>
+            <div id="console2" class="console"></div>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
