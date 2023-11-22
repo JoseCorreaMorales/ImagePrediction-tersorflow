@@ -8,15 +8,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
-        <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css">
+        <link rel="stylesheet" href="./node_modules/toastr/build/toastr.css">
     <link rel="stylesheet" href="main.css">
     <title>Predicción de Imagenes con tensorflow</title>
 </head>
 
 <body>
     <!-- <img src="https://placekitten.com/200/300" crossorigin="" id="img" class="image" alt="" width="200" height="200"><br><br> -->
-    <h1 class="title">Predicción de Imagenes con tensorflow</h1>
     <div class="container">
+        <h1 class="title">Predicción de Imagenes con tensorflow</h1>
         <div class="image-container">
             <img src="./assets/pexels-rene-strgar.jpg" crossorigin="" id="img" class="image" alt="">
         </div>
@@ -27,7 +27,9 @@
             <!-- name and prec gonna render here -->
         </div>
 
-        <video class="webcam" muted playsinline id="webcam" width="250" height="250"></video>
+        <div class="video-wrapper">
+            <video class="webcam" muted playsinline id="webcam" width="250" height="250"></video>
+        </div>
         <div class="btn-clase-container">
             <button id="clase-a" class="btn-clase" onclick="addExample(1)">Jose</button>
             <button id="clase-b" class="btn-clase" onclick="addExample(2)">Ok</button>
@@ -38,7 +40,19 @@
             <div id="console" class="console"></div>
             <div id="console2" class="console"></div>
         </div>
+
     </div>
+    <footer>
+        <div class="footer__info">
+            <h2 class="footer__info--title">Creado con</h2>
+            <p>Tensorflow</p>
+            <p>Mobilenet</p>
+            <p>K-Nearest Neighbor Classifier</p>
+        </div>
+       <img src="./assets/artificial-intelligence-monochromatic.svg" alt="">
+
+    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
