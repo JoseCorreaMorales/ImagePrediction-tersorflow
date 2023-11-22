@@ -16,7 +16,7 @@
 :root {
     --color-primary: #f9b572;
     --color-primary-light: #f9b5720e;
-
+    --color-secondary: #FFE3BB;
 }
 
 ::-webkit-scrollbar {
@@ -189,6 +189,85 @@ video {
     color: var(--color-primary);
 }
 
+.input {
+    border: 2px solid #e8e8e8;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFE3BB;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    width: 20%;
+    font-size: 2rem;
+   }
+
+   @media (max-width: 1024px) {
+        .input {
+           width: 30%;
+        }
+    
+   }
+
+   @media (max-width: 768px) {
+    .input {
+       width: 50%;
+    }
+}
+
+
+   
+   .input:focus, input:hover {
+    outline-color: white;
+    background-color: #FFE3BB;
+    color: #B4BDFF;
+    box-shadow: 5px 5px #FFD28F;
+   }
+
+
+   .send-word-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+   }
+
+   .send-word-btn { 
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 1px solid var(--color-primary-light);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: 0.2s;
+    font-size: 1.5rem;
+    border-radius: 1.8rem;
+  }
+
+  input::placeholder:hover {
+    color: #000;
+  }
+
+  .send-word-btn:hover {
+    background-color: var(--color-secondary);
+
+  }
+
+ 
+  
+  .send-word-btn:hover {
+    color: black;
+    transform: translate(-0.25rem,-0.25rem);
+    background: var(--color-secondary);
+    box-shadow: 0.25rem 0.25rem var(--color-primary);
+  }
+  
+  .send-word-btn:active {
+    transform: translate(0);
+    box-shadow: none;
+  }
+
+
+
 .console-container {
     padding: 2.5rem;
 
@@ -277,9 +356,24 @@ footer > img {
         height: 30rem;
     }
 
+    .send-word-container {
+        flex-direction: column;
+        gap: 1rem;        
+    }
+
+    .send-word-btn, .input {
+        width: 90%;
+    }
+
+
     .btn-clase-container {
         flex-direction: column;
+        width: 50%;
+        gap: 2rem;
+        padding: 1rem;
     }
+
+    
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
