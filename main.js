@@ -131,7 +131,7 @@ async function displayImagePrediction() {
 let count = 0;
 async function cambiarImagen() {
     count++;
-    imgEl.src = `https://picsum.photos/200/300?random=${count}`;
+    imgEl.src = `https://picsum.photos/500/300?random=${count}`;
     imgEl.onload = async () => {
         displayImagePrediction();
     }
