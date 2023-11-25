@@ -57,9 +57,16 @@
 
     </div>
 
+
     <div class="handpose-cotainer">
+        <h2 class="handpose-title">¡Probemos el lenguaje de señas!</h2>
         <div class="hand-wrapper">
-            <video id="hand-video" class="hand-video" width="640" height="480" autoplay></video>
+            <div>
+                <video id="hand-video" class="hand-video" width="640" height="480" autoplay>
+                   
+                </video>
+                <img src="./assets/tensorflow_logo_icon_168671.ico" alt="" srcset="">
+            </div>
             <canvas id="hand-canvas" class="hand-canvas" width="640" height="480"></canvas>
         </div>
     </div>
@@ -80,7 +87,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="main.js"></script>
+        <script src="main.js"></script>
+        <script type="module" src="handpose.js"></script>
+    <!-- <script>
+        window.onload = function () {
+            detectSignLanguage();
+            app();
+        }
+    </script> -->
 </body>
 
 </html>

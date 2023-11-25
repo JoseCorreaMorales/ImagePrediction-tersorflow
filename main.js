@@ -186,7 +186,12 @@ async function cambiarImagen() {
     }
 }
 
-window.onload = app; // Llamar a app() después de cargar la página
+/* async function startApp () {
+    await app();
+} */
+
+//window.onload = app; // Llamar a app() después de cargar la página
+window.addEventListener("load", app);
 
 
 
