@@ -174,7 +174,7 @@ body {
     height: auto;
 }
 
-video {
+.webcam-mobilnet {
     border-radius: 50%;
     margin-top: 3rem;
     outline: .5rem solid var(--color-primary);
@@ -305,6 +305,33 @@ video {
     font-weight: 800;
     font-size: 2.2rem;
 }
+
+.hand-wrapper {
+    display: flex;
+    
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.hand-video {
+    /* width: 50%; */
+    outline: 1px solid red;
+}
+
+.hand-canvas {
+    /* width: 30%; */
+    outline: 1px solid blue;
+}
+
+@media (max-width: 1300px) {
+    .wrapper {
+        flex-direction: column;
+        row-gap: 2rem;
+    
+    }
+}
+
 
 footer {
     display: flex;
