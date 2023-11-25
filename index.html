@@ -22,7 +22,7 @@
         </div>
 
         <div class="desc-container">
-            <button onclick="cambiarImagen();" class="change-img">Cambiar imagen</button>
+            <button onclick="cambiarImagen();" class="change-img" id="change-img">Cambiar imagen</button>
             <div id="desc" class="image-description"></div>
             <!-- name and prec gonna render here -->
         </div>
@@ -37,8 +37,8 @@
             <button id="clase-d" class="btn-clase" onclick="addExample(4)">Iphone</button>
         </div>
           <div class="send-word-container">
-            <input type="text" name="text" class="input" placeholder="¡Escribe una letra! " required>
-            <button class="send-word-btn" >
+            <input type="text" name="text" class="input" id="add-word-input" placeholder="¡Escribe una letra! " required>
+            <button class="send-word-btn" id="add-word-button">
                 Agregar ☺
             </button>
           </div>  

@@ -4,6 +4,13 @@ let descList = document.getElementById("desc");
 const webCamElement = document.getElementById('webcam');
 const classifier = knnClassifier.create();
 const descContainer = document.createElement("div");
+let changeImg = document.getElementById("change-img");
+let console2 = document.getElementById("console2");
+let consoleP = document.getElementById("console");
+
+
+const addWordButton = document.getElementById("add-word-button");
+const addWordInput = document.getElementById("add-word-input");
 
 toastr.options = {
     "closeButton": true,
@@ -62,7 +69,7 @@ const loadClassifier = async () => {
     }
 
 };
-
+let activeBtn = 0;
 async function app() {
     try {
         net = await mobilenet.load();
@@ -72,11 +79,41 @@ async function app() {
                 "closeButton": true,
                 "progressBar": true,
             });
+            activeBtn = 1;
+            
+            //await loadClassifier();
+        }
+        if (activeBtn == 1) {
+            changeImg.style.setProperty("background-color", "var(--color-secondary)");
         }
     } catch (error) {
         console.error("Error al cargar el modelo MobileNet:", error);
     }
     webcam = await tf.data.webcam(webCamElement);
+/*     await add("Untrainded");
+    addWordButton.addEventListener("click", async () => {
+        const word = addWordInput.value;
+        if (word) {
+            await add(word);
+            myClasses.push(word);
+            console.log(myClasses);
+            toastr.success('¡Palabra agregada correctamente!', "", {
+                "positionClass": "toast-top-left",
+                "closeButton": true,
+                "progressBar": true,
+                "timeOut": "10000"
+            });
+        } else {
+            toastr.error('¡No se ha ingresado ninguna palabra!', "", {
+                "positionClass": "toast-top-left",
+                "closeButton": true,
+                "progressBar": true,
+                "timeOut": "10000"
+            });
+        }
+    }); */
+
+
     await addExample(1);/* jose */
     await addExample(2);/* Ok */
     await addExample(3);/* Rock */
@@ -90,14 +127,21 @@ async function app() {
         try {
             result2 = await classifier.predictClass(activation);
             const clases = ["Untrainded", "Jose", "Ok", "Rock", "Iphone"];
-            /* document.getElementById("console2").innerText = clases[result2.label]; */
-            document.getElementById("console2").innerHTML = `<p class="console-prediction"><span>Es: </span> ${clases[result2.label]}</p>`;
+            
+            console2.innerHTML = `<p class="console-prediction"><span>Es: </span> ${clases[result2.label]}</p>`;
 
         } catch (error) {
             console.log(error, "modelo no configura aún...", error);
         }
 
-        document.getElementById("console").innerHTML = 'Prediccion ' + result[0].className + "Probabilidad " + result[0].probability
+       /*  consoleP.innerHTML = 'Prediccion ' 
+        + result[0].className + "Probabilidad " + result[0].probability */
+        consoleP.innerHTML = `
+        <p class=console-prediction><span>Predición: </span>${result[0].className} </p>
+        <p class=console-prediction><span>Probabilidad: </span>${result[0].probability} </p>
+        `
+        
+
         img.dispose();
 
         await tf.nextFrame();
@@ -124,7 +168,12 @@ async function displayImagePrediction() {
         }
     } else {
         console.error("El modelo MobileNet no ha sido cargado aún.");
-        alert("El modelo no ha sido cargado aun.");
+       toastr.error('¡El modelo MobileNet no ha sido cargado aún!', "", {
+            "positionClass": "toast-top-left",
+            "closeButton": true,
+            "progressBar": true,
+            "timeOut": "1000"
+        });
     }
 }
 
@@ -138,6 +187,30 @@ async function cambiarImagen() {
 }
 
 window.onload = app; // Llamar a app() después de cargar la página
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //loadClassifier().then(app);
 //window.onload = loadClassifier.then(app); // Llamar a app() después de cargar la página
 

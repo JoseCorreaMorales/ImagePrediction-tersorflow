@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/JoseCorreaMorales/ImagePrediction-tersorflow#readme",
   "dependencies": {
+    "@tensorflow-models/handpose": "^0.1.0",
+    "@tensorflow/tfjs": "^4.13.0",
     "@types/toastr": "^2.1.43",
     "toastr": "^2.1.4"
   },
