@@ -17,6 +17,7 @@
     --color-primary: #f9b572;
     --color-primary-light: #f9b5720e;
     --color-secondary: #FFE3BB;
+    --font-color: #000000e3;
 }
 
 ::-webkit-scrollbar {
@@ -36,6 +37,10 @@
 
 .toast-message {
     font-size: 2.5rem;
+}
+
+#toast-container .toast-error {
+    background-color: var(--color-primary) !important;
 }
 
 .toast-success {
@@ -61,6 +66,11 @@
     margin: 2rem 0;
     color: #000000;
 
+}
+
+@media (max-width: 900px) {
+    .title {margin: 2rem 1rem;}
+    
 }
 
 body {
@@ -113,9 +123,16 @@ body {
     margin: 0 auto;
 }
 
+@media (max-width: 1024px)  {
+    .change-img {
+        width: 90%;
+    }
+}
+
+
 .change-img:hover {
     background-color: var(--color-primary);
-    color: #FAF8ED;
+    color: #666;
     cursor: pointer;
 }
 
@@ -273,8 +290,9 @@ video {
 
 }
 
-.console {
-    font-size: 1.7rem;
+.console, .console2 {
+    font-size: 1.2rem;
+    font-weight: 300;
     margin: 3rem 0 2rem 0;
 }
 
