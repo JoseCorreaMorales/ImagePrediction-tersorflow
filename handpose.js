@@ -42,9 +42,7 @@ async function detectSignLanguage() {
         console.log("Letra A detectada");
       }
   
-      if (configureLetterB(hand)) {
-        console.log("Letra B detectada");
-      }
+
   
       
     }
@@ -52,6 +50,24 @@ async function detectSignLanguage() {
     // Repetir el proceso para el siguiente fotograma
     requestAnimationFrame(() => detectHandpose(model, video, ctx));
   }
+
+
+  // Función para detectar la forma de la letra "A"
+function detectLetterA(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral
+  if (thumbTip[1] < heightThreshold) {
+    return true;  // Se considera que la letra "A" está formada
+  } else {
+    return false; // La letra "A" no está formada
+  }
+}
     
  /*  async function startDetection() {
     await detectSignLanguage();
