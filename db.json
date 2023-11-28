@@ -1,6 +1,6 @@
 {
   "classifier": {
-    "B": {
+    "C": {
       "kept": true,
       "isDisposedInternal": false,
       "shape": [
@@ -13,11 +13,30 @@
         1024
       ],
       "dataId": {
-        "id": 326
+        "id": 58503
       },
-      "id": 195,
+      "id": 50585,
       "rankType": "2",
-      "scopeId": 272
+      "scopeId": 104386
+    },
+    "Z": {
+      "kept": true,
+      "isDisposedInternal": false,
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "float32",
+      "size": 1024,
+      "strides": [
+        1024
+      ],
+      "dataId": {
+        "id": 156023
+      },
+      "id": 134035,
+      "rankType": "2",
+      "scopeId": 268866
     }
   }
 }
