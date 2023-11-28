@@ -80,6 +80,17 @@ datos específicos de cada clase y sus activaciones asociadas del modelo MobileN
 
   * 21 puntos de referencia tridimensionales a escala métrica mundial. Las predicciones se basan en el modelo de mano GHUM
 
+### heightThreshold:
+
+* **Uso**: Este umbral se utiliza para evaluar la altura de un landmark en el eje vertical (Y).
+  * **Cómo funciona**: Si la coordenada Y de un landmark (por ejemplo, el extremo del pulgar) es menor que el valor de heightThreshold, se considera que la altura es suficientemente baja.
+
+### lateralThreshold:
+
+* **Uso**: Este umbral se utiliza para evaluar la posición lateral de un landmark en el eje horizontal (X).
+  * **Cómo funciona**: Si la coordenada X de un landmark (por ejemplo, la punta del índice) es mayor que el valor de lateralThreshold, se considera que está en una posición lateral.
+
+
 ###### Ver más
 * [Documentación PDF](https://drive.google.com/file/d/1-rmIgTfuCbBPW_IFHkh3f0-U_lnGrWpg/view)
 * [Documentación GitHub](https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection)

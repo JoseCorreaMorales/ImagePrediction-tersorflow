@@ -49,7 +49,7 @@ async function addExample(classId) {
 
 async function saveClassifier() {
     const classifierData = classifier.getClassifierDataset();
-
+    console.log(classifierData)
     await fetch("http://localhost:3000/classifier", {
         method: "PUT",
         headers: {
@@ -64,11 +64,37 @@ const loadClassifier = async () => {
     if (res.ok) {
         const classifierData = await res.json();
         classifier.setClassifierDataset(classifierData);
+        console.log(classifierData);
     } else {
         console.error("Error al cargar el clasificador");
     }
 
 };
+
+/* 
+async function addWord(event) {
+    event.preventDefault();
+    const word = addWordInput.value;
+    if (word) {
+        await addExample(word);
+        await saveClassifier();
+        toastr.success('¡Palabra agregada correctamente!', "", {
+            "positionClass": "toast-top-left",
+            "closeButton": true,
+            "progressBar": true,
+            "timeOut": "10000"
+        });
+    } else {
+        toastr.error('¡No se ha ingresado ninguna palabra!', "", {
+            "positionClass": "toast-top-left",
+            "closeButton": true,
+            "progressBar": true,
+            "timeOut": "10000"
+        });
+    }
+}
+*/
+
 let activeBtn = 0;
 async function app() {
     try {
@@ -80,45 +106,26 @@ async function app() {
                 "progressBar": true,
             });
             activeBtn = 1;
-            
+
             //await loadClassifier();
         }
         if (activeBtn == 1) {
             changeImg.style.setProperty("background-color", "var(--color-secondary)");
-        }
+        }/* 
+        if (numExamples === 0) {
+            console.error("Error: No examples added to the KNN classifier.");
+            return;
+        } */
     } catch (error) {
         console.error("Error al cargar el modelo MobileNet:", error);
     }
     webcam = await tf.data.webcam(webCamElement);
-/*     await add("Untrainded");
-    addWordButton.addEventListener("click", async () => {
-        const word = addWordInput.value;
-        if (word) {
-            await add(word);
-            myClasses.push(word);
-            console.log(myClasses);
-            toastr.success('¡Palabra agregada correctamente!', "", {
-                "positionClass": "toast-top-left",
-                "closeButton": true,
-                "progressBar": true,
-                "timeOut": "10000"
-            });
-        } else {
-            toastr.error('¡No se ha ingresado ninguna palabra!', "", {
-                "positionClass": "toast-top-left",
-                "closeButton": true,
-                "progressBar": true,
-                "timeOut": "10000"
-            });
-        }
-    }); */
 
-
-    await addExample(1);/* jose */
-    await addExample(2);/* Ok */
-    await addExample(3);/* Rock */
-    await addExample(4);/* Iphone */
-
+    await addExample(1);
+    await addExample(2);
+    await addExample(3);
+    await addExample(4);
+    //addWordButton.addEventListener("click", addWord);
     while (true) {
         const img = await webcam.capture();
         const result = await net.classify(img);
@@ -126,24 +133,36 @@ async function app() {
         let result2;
         try {
             result2 = await classifier.predictClass(activation);
+            /*const dataset = [];
+            const example = { image: img, label: "Untrained" };
+            ataset.push(example);
+            await classifier.setClassifierDataset(dataset); */
             const clases = ["Untrainded", "Jose", "Ok", "Rock", "Iphone"];
-            
+            //const clases = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
             console2.innerHTML = `<p class="console-prediction"><span>Es: </span> ${clases[result2.label]}</p>`;
-
+            /*
+            const res = await fetch(`http://localhost:3000/classifier/${clases[result2.label]}`);
+            if (res.ok) {
+                const data = await res.json();
+                if (data && data.length > 0) {
+                    toastr.success(`¡Postura reconocida: ${clases[result2.label]}!`, "", {
+                        "positionClass": "toast-top-left",
+                        "closeButton": true,
+                        "progressBar": true,
+                        "timeOut": "10000"
+                    });
+                }
+            }
+            */
         } catch (error) {
             console.log(error, "modelo no configura aún...", error);
         }
-
-       /*  consoleP.innerHTML = 'Prediccion ' 
-        + result[0].className + "Probabilidad " + result[0].probability */
-        consoleP.innerHTML = `
+        consoleP.innerHTML =
+         `
         <p class=console-prediction><span>Predición: </span>${result[0].className} </p>
         <p class=console-prediction><span>Probabilidad: </span>${result[0].probability} </p>
         `
-        
-
         img.dispose();
-
         await tf.nextFrame();
     }
 }
@@ -154,8 +173,8 @@ async function displayImagePrediction() {
             var result = await net.classify(imgEl);
             let data = JSON.parse(JSON.stringify(result));
             console.log(data);
-
-            descContainer.innerHTML = `
+            descContainer.innerHTML =
+             `
             <div class="prediction">
                 <p class="name"> <span>Nombre</span>: ${data[0].className}</p>
                 <p class="probability"><span>Probabilidad</span>: ${data[1].probability}</p>
@@ -168,7 +187,7 @@ async function displayImagePrediction() {
         }
     } else {
         console.error("El modelo MobileNet no ha sido cargado aún.");
-       toastr.error('¡El modelo MobileNet no ha sido cargado aún!', "", {
+        toastr.error('¡El modelo MobileNet no ha sido cargado aún!', "", {
             "positionClass": "toast-top-left",
             "closeButton": true,
             "progressBar": true,
@@ -185,12 +204,6 @@ async function cambiarImagen() {
         displayImagePrediction();
     }
 }
-
-/* async function startApp () {
-    await app();
-} */
-
-//window.onload = app; // Llamar a app() después de cargar la página
 window.addEventListener("load", app);
 
 
