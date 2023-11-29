@@ -383,6 +383,30 @@ body {
     }
 }
 
+.letter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.letter {
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: #6666663b;
+    border-radius: 3.5rem;
+
+}
+
+.letter:hover {
+    background-color: var(--color-primary);
+    color: #666;
+    cursor: pointer;
+}
+
 
 footer {
     display: flex;

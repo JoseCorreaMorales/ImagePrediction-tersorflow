@@ -139,7 +139,10 @@ async function app() {
             await classifier.setClassifierDataset(dataset); */
             const clases = ["Untrainded", "Jose", "Ok", "Rock", "Iphone"];
             //const clases = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            console2.innerHTML = `<p class="console-prediction"><span>Es: </span> ${clases[result2.label]}</p>`;
+            console2.innerHTML = 
+            `
+            <p class="console-prediction"><span>Es: </span> ${result2.label}</p>
+            `;
             /*
             const res = await fetch(`http://localhost:3000/classifier/${clases[result2.label]}`);
             if (res.ok) {
@@ -166,6 +169,16 @@ async function app() {
         await tf.nextFrame();
     }
 }
+
+const buttons = document.getElementsByClassName("letter");
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", () => {
+    const classId = buttons[i].textContent;
+    addExample(classId);
+  });
+}
+
+
 
 async function displayImagePrediction() {
     if (net) {
