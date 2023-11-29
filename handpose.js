@@ -398,7 +398,621 @@ function detectLetterJ(hand) {
   }
 }
 
+function detectLetterK(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
 
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "K" está formada
+  } else {
+    return false; // La letra "K" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "L" (mayúscula)
+function detectLetterL(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio, anular y meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio, anular y meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] > lateralThreshold &&
+      ringTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "L" está formada
+  } else {
+    return false; // La letra "L" no está formada
+  }
+}
+// Función para detectar la forma de la letra "M" (mayúscula)
+function detectLetterM(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "M" está formada
+  } else {
+    return false; // La letra "M" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "N" (mayúscula)
+function detectLetterN(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "N" está formada
+  } else {
+    return false; // La letra "N" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "U" (mayúscula)
+function detectLetterO(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "U" está formada
+  } else {
+    return false; // La letra "U" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "P" (mayúscula)
+function detectLetterP(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio y anular están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] > lateralThreshold &&
+      ringTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "P" está formada
+  } else {
+    return false; // La letra "P" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "Q" (mayúscula)
+function detectLetterQ(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio, anular y meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio, anular y meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] > lateralThreshold &&
+      ringTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    // También verifica si el anular está por debajo del pulgar para distinguir la "Q"
+    if (ringTip[1] < thumbTip[1]) {
+      return true;  // Se considera que la letra "Q" está formada
+    }
+  }
+
+  return false; // La letra "Q" no está formada
+}
+// Función para detectar la forma de la letra "R" (mayúscula)
+function detectLetterR(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "R" está formada
+  } else {
+    return false; // La letra "R" no está formada
+  }
+}
+// Función para detectar la forma de la letra "S" (mayúscula)
+function detectLetterS(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio y anular están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio y anular están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] > lateralThreshold &&
+      ringTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "S" está formada
+  } else {
+    return false; // La letra "S" no está formada
+  }
+}
+// Función para detectar la forma de la letra "T" (mayúscula)
+function detectLetterT(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio, anular y meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio, anular y meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] > lateralThreshold &&
+      ringTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "T" está formada
+  } else {
+    return false; // La letra "T" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "U" (mayúscula)
+function detectLetterU(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "U" está formada
+  } else {
+    return false; // La letra "U" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "V" (mayúscula)
+function detectLetterV(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el meñique están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      pinkyTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "V" está formada
+  } else {
+    return false; // La letra "V" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "W" (mayúscula)
+function detectLetterW(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice y el meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio y anular están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] > lateralThreshold &&
+      ringTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "W" está formada
+  } else {
+    return false; // La letra "W" no está formada
+  }
+}
+// Función para detectar la forma de la letra "X" (mayúscula)
+function detectLetterX(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio, anular y meñique están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice y el anular están en una posición lateral opuesta
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] < lateralThreshold &&
+      ringTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "X" está formada
+  } else {
+    return false; // La letra "X" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "Y" (mayúscula)
+function detectLetterY(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio y anular están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio y anular están en una posición lateral
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] < lateralThreshold &&
+      ringTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "Y" está formada
+  } else {
+    return false; // La letra "Y" no está formada
+  }
+}
+
+// Función para detectar la forma de la letra "Z" (mayúscula)
+function detectLetterZ(hand) {
+  // Supongamos que el pulgar es el punto 4 en la lista de landmarks
+  // y que queremos verificar si está en una posición elevada
+  const thumbTip = hand[4];
+
+  // Supongamos que el índice es el punto 8 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const indexTip = hand[8];
+
+  // Supongamos que el medio es el punto 12 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const middleTip = hand[12];
+
+  // Supongamos que el anular es el punto 16 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const ringTip = hand[16];
+
+  // Supongamos que el meñique es el punto 20 en la lista de landmarks
+  // y que queremos verificar si está en una posición lateral
+  const pinkyTip = hand[20];
+
+  // Define una altura umbral para considerar que el pulgar está elevado
+  const heightThreshold = 100;  // Puedes ajustar este valor según tus necesidades
+
+  // Define una posición umbral lateral para considerar que el índice, medio y anular están en una posición lateral
+  const lateralThreshold = 50;  // Puedes ajustar este valor según tus necesidades
+
+  // Verifica si la altura del pulgar supera el umbral y si el índice, medio y anular están en una posición lateral opuesta
+  if (thumbTip[1] < heightThreshold &&
+      indexTip[0] > lateralThreshold &&
+      middleTip[0] < lateralThreshold &&
+      ringTip[0] > lateralThreshold) {
+    return true;  // Se considera que la letra "Z" está formada
+  } else {
+    return false; // La letra "Z" no está formada
+  }
+}
 
 
 

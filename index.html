@@ -14,9 +14,11 @@
     <!-- Handpose -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
     <!-- Toastr notifications -->
-        <link rel="stylesheet" href="./node_modules/toastr/build/toastr.css">
-        <!-- main styles -->
+    <link rel="stylesheet" href="./node_modules/toastr/build/toastr.css">
+
+    <!-- main styles -->
     <link rel="stylesheet" href="main.css">
+
     <title>Predicción de Imagenes con tensorflow</title>
 </head>
 
@@ -42,13 +44,47 @@
             <button id="clase-b" class="btn-clase" onclick="addExample(2)">Ok</button>
             <button id="clase-c" class="btn-clase" onclick="addExample(3)">Rock</button>
             <button id="clase-d" class="btn-clase" onclick="addExample(4)">Iphone</button>
+            <button id="toggleButton" class="btn-clase">ver letras</button>
         </div>
-          <div class="send-word-container">
-            <input type="text" name="text" class="input" id="add-word-input" placeholder="¡Escribe una letra! " required>
+        <div class="letter-container" id="toggleContent" style="display: none;">
+            <!--  -->
+            <span class="letter">A</span>
+            <span class="letter">B</span>
+            <span class="letter">C</span>
+            <span class="letter">D</span>
+            <span class="letter">E</span>
+            <span class="letter">F</span>
+            <span class="letter">G</span>
+            <span class="letter">H</span>
+            <span class="letter">I</span>
+            <span class="letter">J</span>
+            <span class="letter">K</span>
+            <span class="letter">L</span>
+            <span class="letter">M</span>
+            <span class="letter">N</span>
+            <span class="letter">Ñ</span>
+            <span class="letter">O</span>
+            <span class="letter">P</span>
+            <span class="letter">Q</span>
+            <span class="letter">R</span>
+            <span class="letter">S</span>
+            <span class="letter">T</span>
+            <span class="letter">U</span>
+            <span class="letter">V</span>
+            <span class="letter">W</span>
+            <span class="letter">X</span>
+            <span class="letter">Y</span>
+            <span class="letter">Z</span>
+        </div>
+        <!--  -->
+
+        <div class="send-word-container">
+            <input type="text" name="text" class="input" id="add-word-input" placeholder="¡Escribe una letra! "
+                required>
             <button class="send-word-btn" id="add-word-button">
                 Agregar ☺
             </button>
-          </div>  
+        </div>
 
         <div class="console-container">
             <div id="console" class="console"></div>
@@ -63,7 +99,7 @@
         <div class="hand-wrapper">
             <div>
                 <video id="hand-video" class="hand-video" width="640" height="480" autoplay>
-                   
+
                 </video>
                 <img src="./assets/tensorflow_logo_icon_168671.ico" alt="" srcset="">
             </div>
@@ -74,27 +110,35 @@
     <footer>
         <div class="footer__info">
             <h2 class="footer__info--title">Creado con</h2>
-            <p>Tensorflow</p>
+            <p>Hand pose detection</p>
             <p>Mobilenet</p>
             <p>K-Nearest Neighbor Classifier</p>
         </div>
-       <img src="./assets/artificial-intelligence-monochromatic.svg" alt="">
+        <img src="./assets/artificial-intelligence-monochromatic.svg" alt="">
 
     </footer>
-    
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="main.js"></script>
-        <script type="module" src="handpose.js"></script>
+    <script src="main.js"></script>
+    <script type="module" src="handpose.js"></script>
     <!-- <script>
         window.onload = function () {
             detectSignLanguage();
             app();
         }
     </script> -->
+
+    <script>
+        $(document).ready(function () {
+            $("#toggleButton").click(function () {
+                $("#toggleContent").toggle();
+            });
+        });
+    </script>
 </body>
 
 </html>
