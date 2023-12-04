@@ -1,5 +1,16 @@
 # ImagePrediction-tersorflow
 
+## Acerca del proyecto 📋
+Uso de TensorFlow.js para llevar a cabo la predicción de imágenes mediante el uso del modelo MobileNet y la clasificación usando el algoritmo K-Nearest Neighbor y 🖐️PoseDetection. Permite la identificación de objetos en imágenes de fuentes como Picsum, e integra la habilidad de cambiar de manera dinámica streams en tiempo real desde la webcam
+
+## Objetivo 🚀
+El objetivo principal de esta aplicación es proporcionar una herramienta que no solo sea eficiente en la identificación precisa de objetos en imágenes, sino que también permita una experiencia interactiva al incorporar la detección de **lenguaje de señas** mediante la utilización de los modelos de MobileNet, KNN y  Hand Pose Detection. Este componente adicional amplía significativamente la utilidad de la aplicación, ofreciendo una interfaz inclusiva y accesible para personas con discapacidades.
+
+La implementación del modelo MobileNet, que es una red neuronal convolucional (CNN) preentrenada, garantiza una alta precisión en la predicción de imágenes al aprovechar sus capacidades de reconocimiento de patrones. El uso simultáneo del clasificador KNN complementa esta funcionalidad, permitiendo la clasificación en tiempo real de objetos detectados mediante la cámara web.
+
+La detección de lenguaje de señas mediante Hand Pose Detection añade una capa adicional de interactividad a la aplicación. Este componente se basa en una red neuronal convolucional y proporciona la capacidad de reconocer gestos de las manos y traducirlos en un alfabeto manual, proporcionando así una herramienta valiosa para la comunicación inclusiva.
+
+
 ## Construido con 🛠️
 <p align="center">
   <img src="https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Icon" />
@@ -107,6 +118,12 @@ datos específicos de cada clase y sus activaciones asociadas del modelo MobileN
 - [ ] Agregar Hand Pose Detection
     - [ ] Agregar detección de lenguaje de señas con hand pose detection (alfabeto manual americano (AML))
 
+
+## Diseño de la interfaz de usuario 🎨
+<p align="center">
+  <img  src="./assets/knn-section-design.png" width="80%" />
+  <img  src="./assets/handpose-section-design.jpg" width="80%" />
+</p>
 
 ## Acknowledgments  🎁
 
